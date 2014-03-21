@@ -264,6 +264,9 @@ The kernel command line & boot command below are for a Cavium Networks CNS3000 b
 #define CFG_MAX_DATAFLASH_BANKS		1
 #define CFG_DATAFLASH_LOGIC_ADDR_CS0	CFG_SPI_FLASH_BASE	/* Logical adress for CS0 */
 
+/* For FreeBSD */
+#define CONFIG_API
+#define	CFG_MMC_MAX_DEVICE 4
 /* environment data, spi dataflash only. */
 #ifdef CONFIG_SPI_FLASH_BOOT
 	#define CONFIG_ENV_IS_IN_DATAFLASH  1
