@@ -32,7 +32,10 @@
 #include <string.h>
 #endif /* USE_HOSTCC */
 #include <watchdog.h>
+#ifdef __FreeBSD__
+#else
 #include <linux/types.h>
+#endif
 #include <u-boot/md5.h>
 
 static void

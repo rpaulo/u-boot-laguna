@@ -222,7 +222,7 @@ LIBS += fs/cramfs/libcramfs.a fs/fat/libfat.a fs/fdos/libfdos.a fs/jffs2/libjffs
 	fs/reiserfs/libreiserfs.a fs/ext2/libext2fs.a fs/yaffs2/libyaffs2.a
 LIBS += net/libnet.a
 LIBS += disk/libdisk.a
-LIBS += drivers/bios_emulator/libatibiosemu.a
+#LIBS += drivers/bios_emulator/libatibiosemu.a
 LIBS += drivers/block/libblock.a
 LIBS += drivers/dma/libdma.a
 LIBS += drivers/hwmon/libhwmon.a
@@ -239,7 +239,7 @@ LIBS += drivers/net/libnet.a
 LIBS += drivers/net/phy/libphy.a
 LIBS += drivers/net/sk98lin/libsk98lin.a
 LIBS += drivers/pci/libpci.a
-LIBS += drivers/pcmcia/libpcmcia.a
+#LIBS += drivers/pcmcia/libpcmcia.a
 LIBS += drivers/spi/libspi.a
 ifeq ($(CPU),mpc83xx)
 LIBS += drivers/qe/qe.a

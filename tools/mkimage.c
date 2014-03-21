@@ -22,6 +22,9 @@
  * MA 02111-1307 USA
  */
 
+#ifdef __FreeBSD__
+typedef unsigned long ulong;
+#endif
 #include "mkimage.h"
 #include <image.h>
 

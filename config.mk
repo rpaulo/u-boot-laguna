@@ -57,6 +57,8 @@ CONFIG_SHELL	:= $(shell if [ -x "$$BASH" ]; then echo $$BASH; \
 
 ifeq ($(HOSTOS)-$(HOSTARCH),darwin-ppc)
 HOSTCC		= cc
+else ifeq ($(HOSTOS),freebsd)
+HOSTCC		= cc
 else
 HOSTCC		= gcc
 endif

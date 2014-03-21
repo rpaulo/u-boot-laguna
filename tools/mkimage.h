@@ -25,7 +25,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#ifndef __WIN32__
+#if !defined(__WIN32__) && !defined(__FreeBSD__)
 #include <netinet/in.h>		/* for host / network byte order conversions	*/
 #endif
 #include <sys/mman.h>

@@ -6,7 +6,12 @@
 #ifndef _MD5_H
 #define _MD5_H
 
+#ifdef __FreeBSD__
+#include <sys/types.h>
+typedef uint32_t __u32;
+#else
 #include <linux/types.h>
+#endif
 
 struct MD5Context {
 	__u32 buf[4];

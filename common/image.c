@@ -68,6 +68,9 @@ DECLARE_GLOBAL_DATA_PTR;
 static image_header_t* image_get_ramdisk (ulong rd_addr, uint8_t arch,
 						int verify);
 #else
+#ifdef __FreeBSD__
+typedef unsigned long ulong;
+#endif
 #include "mkimage.h"
 #include <u-boot/md5.h>
 #include <time.h>
