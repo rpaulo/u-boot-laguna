@@ -2567,6 +2567,7 @@ davinci_sonata_config :	unconfig
 #########################################################################
 
 cavium_cns3000_config \
+cavium_cns3000_spi_config \
 cavium_cns3000be8_config : unconfig
 	@if [ "$(findstring _cns3000be8_, $@)" ] ; then \
 		sed -r 's/ENDIANNESS/big/g; s/#.*//' board/cavium/cns3000/u-boot.lds.template \

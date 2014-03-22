@@ -78,11 +78,7 @@
 /*
  * Hardware drivers
  */
-
-/*
- * select serial console configuration
- */
-#define CFG_CNS3000_CONSOLE	CNS3000_UART1	/* we use UART1 for console */
+#define GPIOA_PERST			11
 
 /*
  * NS16550 Configuration
@@ -92,6 +88,9 @@
 # define CFG_SERIAL2		0x78800000
 # define CFG_SERIAL3		0x78C00000
 
+/*
+ * select serial console configuration
+ */
 #define CONFIG_CNS3000_SERIAL
 #define CONFIG_CNS3000_CLOCK	24000000
 #define CONFIG_CNS3000_PORTS	{ (void *)CFG_SERIAL0, (void *)CFG_SERIAL1, (void *)CFG_SERIAL2 }
@@ -228,7 +227,7 @@ The kernel command line & boot command below are for a Cavium Networks CNS3000 b
 // #undef PHYS_SDRAM_32BIT					/* undefined: 16 bits, defined: 32 bits */
 
 #define CONFIG_NR_DRAM_BANKS		1		/* we have 1 bank of DRAM */
-#define PHYS_SDRAM_1		       	0x00000000	/* SDRAM Bank #1 */
+#define PHYS_SDRAM_1		       	0x20000000	/* SDRAM Bank #1 */
 
 #ifdef PHYS_SDRAM_32BIT
 #define PHYS_SDRAM_1_SIZE		0x8000000	/* 0x10000000 = 256 MB */
@@ -243,9 +242,6 @@ The kernel command line & boot command below are for a Cavium Networks CNS3000 b
  *  Use the CFI flash driver for ease of use
  */
 #define PHYS_FLASH_1						0x10000000
-#define PHYS_FLASH_SIZE         0x01000000 /* 16 MB */
-#define PHYS_FLASH_BANK_SIZE    0x01000000 /* 16 MB Banks */
-#define PHYS_FLASH_SECT_SIZE    0x00020000 /* 128 KB sectors (x1) */
 #define CFG_FLASH_USE_BUFFER_WRITE 1
 
 #define CFG_FLASH_BASE			PHYS_FLASH_1
@@ -253,7 +249,7 @@ The kernel command line & boot command below are for a Cavium Networks CNS3000 b
 #define CFG_MONITOR_LEN			(256 << 10)
 
 #define CFG_MAX_FLASH_BANKS     1       /* max number of memory banks           */
-#define CFG_MAX_FLASH_SECT      128 /* max number of sectors on one chip    */
+#define CFG_MAX_FLASH_SECT      256 /* max number of sectors on one chip    */
 
 #define CFG_FLASH_CFI       /* The flash is CFI compatible  */
 #define CONFIG_FLASH_CFI_DRIVER     /* Use common CFI driver  */
@@ -261,10 +257,7 @@ The kernel command line & boot command below are for a Cavium Networks CNS3000 b
 
 #define CFG_FLASH_BANKS_LIST  { PHYS_FLASH_1 }
 
-#define CFG_FLASH_CFI_WIDTH FLASH_CFI_16BIT /* no byte writes on IXP4xx */
-
-#define CFG_FLASH_ERASE_TOUT  240000000  /* Timeout for Flash Erase (in ms)  */
-#define CFG_FLASH_WRITE_TOUT  10000000 /* Timeout for Flash Write (in ms)  */
+#define CFG_FLASH_CFI_WIDTH FLASH_CFI_16BIT /* no byte writes */
 
 #define CFG_FLASH_EMPTY_INFO    /* print 'E' for empty sector on flinfo */
 
